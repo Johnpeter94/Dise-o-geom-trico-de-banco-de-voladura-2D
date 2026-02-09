@@ -1,4 +1,4 @@
-# app.py
+
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
@@ -83,7 +83,7 @@ with st.expander("Parámetros por barreno (uno por uno)", expanded=True):
                 f"L carga (m) — #{i+1}", 0.0, float(lonbar_i), float(min(st.session_state["lq"][i], lonbar_i)), 0.5,
                 key=f"lq_{i}"
             )
-            # Agua es overlay y no consume carga; solo debe estar dentro del barreno
+          
             agua_i = st.slider(
                 f"L agua (m) — #{i+1}", 0.0, float(lonbar_i), float(min(st.session_state["agua"][i], lonbar_i)), 0.5,
                 key=f"agua_{i}"
@@ -148,7 +148,7 @@ def dim_v(x, y0, y1, text, tag="", dash="dash"):
         bordercolor="rgba(0,0,0,0.25)", borderwidth=1
     )
 
-# >>> MODIFICADA: ahora acepta color
+
 def dim_h(y, x0, x1, text, dash="dash", color="black"):
     fig.add_shape(type="line", x0=x0, y0=y, x1=x1, y1=y,
                   line=dict(width=2, dash=dash, color=color))
@@ -184,7 +184,7 @@ fig.add_trace(go.Scatter(
     showlegend=True
 ))
 
-# ------------------------ ÁNGULO DE TALUD (toggleable en leyenda) ------------------------
+# ------------------------ ÁNGULO DE TALUD  ------------------------
 ang_cx, ang_cy = loninf + disdif, base_y
 R = max(1.5, 0.18 * h)
 theta = np.linspace(0, np.radians(angtalud), 60)
@@ -349,7 +349,7 @@ if show_dims and "Banco" in dims_what:
     dim_v(x=longbase, y0=base_y, y1=base_y+h, text=f"Altura banco = {h:.2f} m")
     dim_h(y=-1.2, x0=0, x1=longbase, text=f"Longitud = {longbase:.2f} m")
 
-# >>> NUEVA: cota blanca de límite de pie de talud
+# cota color blanco de límite de pie de talud
 if show_dims and "Pie de talud" in dims_what:
     dim_h(
         y=base_y,
@@ -386,6 +386,7 @@ fig.update_yaxes(scaleanchor="x", scaleratio=1)
 st.markdown("---")
 st.subheader("Gráfica resultante")
 st.plotly_chart(fig, use_container_width=True)
+
 
 
 
