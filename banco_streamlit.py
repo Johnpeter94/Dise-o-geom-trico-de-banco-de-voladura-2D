@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 
 st.set_page_config(page_title="Bench + Barrenos (por barreno)", layout="wide")
-st.title("Sección de Banco con Barrenos — parámetros por barreno")
+st.title("Diseño geométrico de voladura 2D ")
 
 COLORS = {
     "banco_fill": "rgba(120,120,120,0.50)",
@@ -386,6 +386,7 @@ fig.update_yaxes(scaleanchor="x", scaleratio=1)
 st.markdown("---")
 st.subheader("Gráfica resultante")
 st.plotly_chart(fig, use_container_width=True)
+
 
 
 
