@@ -2,8 +2,6 @@
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
-import ezdxf
-from io import BytesIO
 
 
 st.set_page_config(page_title="Bench + Barrenos (por barreno)", layout="wide")
@@ -388,5 +386,6 @@ fig.update_yaxes(scaleanchor="x", scaleratio=1)
 st.markdown("---")
 st.subheader("Gráfica resultante")
 st.plotly_chart(fig, use_container_width=True)
+
 
 
